@@ -1,0 +1,40 @@
+/* MIT licence (see licence.txt). D Czech 2020. */ 
+/* General CSS styles */
+
+:root{
+  --general: white;
+  --hover: #00CCFF;
+}
+
+h1{
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	text-align: center; 
+	color: var(--general);
+}
+
+.button{
+	background-color: Transparent;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	color: var(--general);
+	font-size: 18px;
+	text-decoration: none;
+	border-color: var(--general);
+	border-style: solid;
+	border-width: small;
+}
+
+.button:hover{
+    color: var(--hover);
+	border-color: var(--hover);
+}
+
+.button:active{
+	background-color: var(--hover);
+}
+
+.output{
+	color: var(--general);
+}
