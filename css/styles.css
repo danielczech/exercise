@@ -12,6 +12,8 @@ h1{
 	color: var(--general);
 }
 
+/* Buttons */
+
 .button{
 	background-color: Transparent;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -35,6 +37,63 @@ h1{
 	background-color: var(--hover);
 }
 
-.output{
+/* Toggle switches */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--hover);
+  -webkit-transition: .01s;
+  transition: .01s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: black;
+  -webkit-transition: .01s;
+  transition: .01s;
+}
+
+input:checked + .slider {
+  background-color: var(--general);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--general);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Settings text */
+
+.settings{
 	color: var(--general);
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+
 }

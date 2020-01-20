@@ -1,18 +1,12 @@
-function randomString(len, alphanum){
-  // Randomised set of characters of length len
-  // if alphanum == True, include approx 50% letters
-  alphanum = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-  num = '0123456789';
-  if(alphanum){
-    charitems = alphanum + num.repeat(5);
-  }
-  else{
-    charitems = num;
-  } 
-  items = [];
-  for(i = 0; i <= len; i++){
-    item = charitems.charAt(Math.floor(Math.random()*len));
-    items.push(item);
-  }
-  return items;
+// Display randomised string for set length of time.
+// Accept user input after set length of time.
+// Immediately display matched up results.
+// Button for re-run.
+
+function displayTimed(delay){
+  // Display selected string for time length given 
+  // by delay.
+  testString = JSON.parse(localStorage.getItem("testString"));
+  showString = document.getElementById("showLen");
+  showLen.innerHTML = defaultLen;
 }
