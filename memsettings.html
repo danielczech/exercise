@@ -23,21 +23,17 @@
     <button class = "button" onclick = "javascript:changeLen('+')" id = "button"> + </button> 
     
     <div class = "settings">
-
       Alphanumeric?
-
       <label class="switch">
-        <input type="checkbox" checked>
+        <input type="checkbox" id = "alphaNumCheck" onchange = "javascript:setAlphaNum(this)">
         <span class="slider round"></span>
       </label>
     </div>
 
-    <div class = "settings">
-    
+    <div class = "settings">	
       Reversed?
-
       <label class="switch">
-        <input type="checkbox" checked>
+        <input type="checkbox" id = "reversedCheck" onchange = "javascript:setReversed(this)">
         <span class="slider round"></span>
       </label>
     </div>
