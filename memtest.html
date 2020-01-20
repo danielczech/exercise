@@ -11,13 +11,20 @@
     <script type="text/javascript" src="js/memtest.js"></script>
   </head>
 
-  <body onload = "displayTimed()" bgcolor = "black">
+  <body onload = "displayTimed(1000)" bgcolor = "black">
 
-    <div>
+    <div id = "seqDiv">
       <span class = "disp" id = "testSequence"></span>
     </div>
 
-  </body>
+    <div id = "ansForm" style="display:none">
+      <input type="text" id="ansInput" autocomplete="off"><br>
+    </div>
 
+    <div id = "check" style="display:none">
+      <button class = "button" onclick = "javascript:checkAns()"> Check! </button> 
+    </div>
+
+  </body>
 
 </html>

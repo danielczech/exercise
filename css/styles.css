@@ -4,12 +4,25 @@
 :root{
   --general: white;
   --hover: #00CCFF;
+  --bg: #000000;
 }
 
 h1{
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	text-align: center; 
 	color: var(--general);
+}
+
+/* Text Forms */
+
+input[type=text], select {
+  display: inline-block;
+  border: 0px; 
+  background-color: var(--bg);
+  color: var(--general);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 0.8em;
+  font-size: 18px;
 }
 
 /* Buttons */
@@ -29,7 +42,7 @@ h1{
 }
 
 .button:hover{
-    color: var(--hover);
+  color: var(--hover);
 	border-color: var(--hover);
 }
 
@@ -103,4 +116,5 @@ input:checked + .slider:before {
   color: var(--general);
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: 32;
+  letter-spacing: 0.8em;
 }

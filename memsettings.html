@@ -17,11 +17,13 @@
   <h1> Settings </h1>
 
   <body onload = "defaults()" bgcolor = "black">
-     
-    <button class = "button" onclick = "javascript:changeLen('-')" id = "button"> - </button> 
-    <span class = "settings" id = "showLen"></span>
-    <button class = "button" onclick = "javascript:changeLen('+')" id = "button"> + </button> 
     
+    <div class = "settings"> 
+      <button class = "button" onclick = "javascript:changeLen('-')" id = "button"> - </button> 
+      <span id = "showLen"></span>
+      <button class = "button" onclick = "javascript:changeLen('+')" id = "button"> + </button> 
+    </div>
+
     <div class = "settings">
       Alphanumeric?
       <label class="switch">
