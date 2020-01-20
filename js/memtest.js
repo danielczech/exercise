@@ -6,7 +6,10 @@
 function displayTimed(delay){
   // Display selected string for time length given 
   // by delay.
-  testString = JSON.parse(localStorage.getItem("testString"));
-  showString = document.getElementById("showLen");
-  showLen.innerHTML = defaultLen;
+  testSequence = JSON.parse(localStorage.getItem("testSequence"));
+  testLen = JSON.parse(localStorage.getItem("testSequence"));
+
+  dispSequence = document.getElementById("testSequence");
+  dispSequence.innerHTML = testSequence;
+
 }
