@@ -5,10 +5,41 @@
 // Immediately display matched up results.
 // Button for re-run.
 
+function randomString(len, alphanum){
+  // Randomised set of characters of length len
+  // if alphanum == True, include approx 50% letters
+  alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  num = '0123456789';
+  if(alphanum){
+    charitems = alpha + num.repeat(5);
+  }
+  else{
+    charitems = num;
+  } 
+  items = [];
+  for(i = 0; i <= len; i++){
+    item = charitems.charAt(Math.floor(Math.random()*charitems.length));
+    items.push(item);
+  }
+  return items;
+}
+
+function again(){
+  window.location.href = "memtest.html"
+}
+
+function settings(){
+  window.location.href = "memsettings.html"
+}
+
 function displayTimed(delay){
+  // Calculate sequence based on settings:
+  length = JSON.parse(localStorage.getItem("len"));
+  alphanum = JSON.parse(localStorage.getItem("alphaNum"));
+  testSequence = randomString(length, alphanum);
+  localStorage.setItem("testSequence", JSON.stringify(testSequence));
   // Display selected string for time length given 
   // by delay.
-  testSequence = JSON.parse(localStorage.getItem("testSequence"));
   testLen = JSON.parse(localStorage.getItem("testSequence"));
   dispSequence = document.getElementById("testSequence");
   dispSequence.innerHTML = testSequence.join("");
