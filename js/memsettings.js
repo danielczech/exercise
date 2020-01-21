@@ -1,3 +1,5 @@
+// MIT licence (see licence.txt). D Czech 2020.
+
 function runTest(){
   length = JSON.parse(localStorage.getItem("len"));
   alphanum = JSON.parse(localStorage.getItem("alphaNum"));

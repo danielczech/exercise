@@ -1,3 +1,5 @@
+// MIT licence (see licence.txt). D Czech 2020.
+
 // Display randomised string for set length of time.
 // Accept user input after set length of time.
 // Immediately display matched up results.
@@ -15,8 +17,30 @@ function displayTimed(delay){
 }
 
 function checkAns(){
-	ansInput = document.getElementById("ansInput");
-	alert(ansInput.value);
+  dispForm = document.getElementById("ansForm");
+  dispForm.style.display = "none"; 
+  check = document.getElementById("check");
+  check.style.display = "none"; 
+  ansDisp = document.getElementById("ansDisp");
+  ansDisp.style.display = "block";
+  // Red for incorrect char, green for correct.
+	ansInput = document.getElementById("ansInput").value;
+	testSequence = JSON.parse(localStorage.getItem("testSequence"));
+  ansSequence = "";
+  for(i = 0; i < testSequence.length; i++){
+    // Case insensitive comparisons
+    // To Do: Need to handle incorrect length
+    if(testSequence[i].toUpperCase() === ansInput[i].toUpperCase()){
+      ansSequence = ansSequence + ansInput[i].fontcolor("#2AA834"); // Green
+    }
+    else{
+      ansSequence = ansSequence + ansInput[i].fontcolor("#EB4034"); // Red
+    }
+  } 
+  correctSeq = document.getElementById("correctSeq");
+  correctSeq.innerHTML = testSequence.join("");
+  userSeq = document.getElementById("userSeq");
+  userSeq.innerHTML = ansSequence;
 }
 
 function clearSequence(){
