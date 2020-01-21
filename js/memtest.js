@@ -29,8 +29,11 @@ function checkAns(){
   ansSequence = "";
   for(i = 0; i < testSequence.length; i++){
     // Case insensitive comparisons
-    // To Do: Need to handle incorrect length
-    if(testSequence[i].toUpperCase() === ansInput[i].toUpperCase()){
+    if(i >= ansInput.length){
+      //Handle incorrect length:
+      ansSequence = ansSequence + " ";
+    }
+    else if(testSequence[i].toUpperCase() === ansInput[i].toUpperCase()){
       ansSequence = ansSequence + ansInput[i].fontcolor("#2AA834"); // Green
     }
     else{
