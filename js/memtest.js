@@ -32,7 +32,9 @@ function settings(){
   window.location.href = "memsettings.html"
 }
 
-function displayTimed(delay){
+function displayTimed(){
+  // Get delay:
+  delay = JSON.parse(localStorage.getItem("timer"));
   // Calculate sequence based on settings:
   length = JSON.parse(localStorage.getItem("len"));
   alphanum = JSON.parse(localStorage.getItem("alphaNum"));

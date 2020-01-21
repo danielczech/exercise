@@ -1,4 +1,5 @@
 // MIT licence (see licence.txt). D Czech 2020.
+// Settings for memory test. 
 
 function runTest(){
   window.location.href = "memtest.html"
@@ -16,6 +17,11 @@ function setReversed(check){
 
 function defaults(){
   // Default settings on load.
+  // Timer:
+  defaultTimer = 10000;
+  localStorage.setItem("timer", JSON.stringify(defaultTimer));
+  showTimer = document.getElementById("showTimer");
+  showTimer.innerHTML = defaultTimer/1000.0;
   // Number of characters:
   defaultLen = 8;
   localStorage.setItem("len", JSON.stringify(defaultLen));
@@ -33,8 +39,24 @@ function defaults(){
   reversedCheck.checked = false;
 }
 
+function changeTimer(sign){
+  // Increment or decrement timer (seconds).
+  // Min value 1 second.
+  t = JSON.parse(localStorage.getItem("timer"));
+  if(sign == "+"){
+    t = t + 1000;
+  }
+  else if(sign == "-" && t > 1000) {
+    t = t - 1000;
+  }
+  localStorage.setItem("timer", JSON.stringify(t));
+  showTimer = document.getElementById("showTimer");
+  showTimer.innerHTML = t/1000.0;
+}
+
 function changeLen(sign){
   // Increment or decrement length.
+  // Min length 3 characters.
   len = JSON.parse(localStorage.getItem("len"));
   if(sign == "+"){
     len = len + 1;
