@@ -50,15 +50,21 @@ function displayTimed(){
 }
 
 function checkAns(){
+  // Display correct elements.
   dispForm = document.getElementById("ansForm");
   dispForm.style.display = "none"; 
   check = document.getElementById("check");
   check.style.display = "none"; 
   ansDisp = document.getElementById("ansDisp");
   ansDisp.style.display = "block";
-  // Red for incorrect char, green for correct.
+  // Get test sequence and user input.
 	ansInput = document.getElementById("ansInput").value;
-	testSequence = JSON.parse(localStorage.getItem("testSequence"));
+  testSequence = JSON.parse(localStorage.getItem("testSequence"));
+  // Check if should be reversed.
+  reversed = JSON.parse(localStorage.getItem("reversed"));
+  if(reversed){
+    testSequence = testSequence.reverse();
+  }
   ansSequence = "";
   for(i = 0; i < testSequence.length; i++){
     // Case insensitive comparisons
