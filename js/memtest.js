@@ -17,7 +17,7 @@ function randomString(len, alphanum){
     charitems = num;
   } 
   items = [];
-  for(i = 0; i <= len; i++){
+  for(i = 0; i < len; i++){
     item = charitems.charAt(Math.floor(Math.random()*charitems.length));
     items.push(item);
   }
