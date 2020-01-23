@@ -2,40 +2,29 @@
 <!-- Numeric and alphanumeric memorisation. -->
 <!-- Settings page. -->
 <!DOCTYPE html>
-
 <html>
-
   <head>
-
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">
     <link rel = "stylesheet" href = "css/styles.css">
     <script type="text/javascript" src="js/memsettings.js"></script>
-
   </head>
-
   <h1> Sequence Settings: </h1>
-
   <body onload = "defaults()" bgcolor = "black">
-    
     <div class = "container">
-
       <div class = "settings"> 
-      
         <p>
           Length: &emsp;
           <button class = "button" onclick = "javascript:changeLen('-')"> - </button> 
           <span id = "showLen"></span>
           <button class = "button" onclick = "javascript:changeLen('+')"> + </button> 
         </p>
-      
         <p>
           Timer: &emsp;
           <button class = "button" onclick = "javascript:changeTimer('-')"> - </button> 
           <span id = "showTimer"></span>
           <button class = "button" onclick = "javascript:changeTimer('+')"> + </button> 
         </p>
-      
         <p>
           Alphanumeric? &emsp;
           <label class="switch">
@@ -43,7 +32,6 @@
             <span class="slider round"></span>
           </label>
         </p>
-
         <p>
           Reversed? &emsp;
           <label class="switch">
@@ -51,13 +39,8 @@
             <span class="slider round"></span>
           </label>
         </p>
-
         <button class = "button" onclick = "javascript:runTest()" id = "button"> Go! </button> 
-
       </div>
-
     </div>  
-
   </body>
-
 </html>

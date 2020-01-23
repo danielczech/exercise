@@ -1,55 +1,38 @@
 <!-- MIT licence (see licence.txt). D Czech 2020. -->
 <!-- Numeric and alphanumeric memorisation. -->
 <!DOCTYPE html>
-
 <html>
-
   <head>
-
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">
     <link rel = "stylesheet" href = "css/styles.css">
     <script type="text/javascript" src="js/memtest.js"></script>
-  
   </head>
-
   <body onload = "displayTimed()" bgcolor = "black">
-
     <div class = "container">
-
       <div id = "seqDiv">
       	<p>
           <span class = "disp" id = "testSequence"></span>
         </p>
       </div>
-
       <div id = "ansForm" style="display:none">
         <input type="text" id="ansInput" autocomplete="off"><br>
       </div>
-
       <div id = "check" class = "disp" style="display:none">
         <button class = "button" onclick = "javascript:checkAns()"> Check! </button> 
       </div>
-
       <div id = "ansDisp" style="display:none">
-
         <p>
           <span class = "disp" id = "correctSeq"></span>
         </p>
-      
         <p>
           <span class = "disp" id = "userSeq"></span>
         </p>
-
         <div class = "disp">
           <button class = "button" onclick = "javascript:again()"> Again </button>
           <button class = "button" onclick = "javascript:settings()"> Settings </button>
         </div>
-
       </div>
-    
     </div>
-
   </body>
-
 </html>
