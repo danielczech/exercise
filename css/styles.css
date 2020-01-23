@@ -5,12 +5,17 @@
   --general: white;
   --hover: #00CCFF;
   --bg: #000000;
+  --generalFont: 1.5em;
 }
 
 h1{
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	text-align: center; 
 	color: var(--general);
+}
+
+body {
+  font-size: var(--generalFont);
 }
 
 /* Text Forms */
@@ -22,7 +27,7 @@ input[type=text], select {
   color: var(--general);
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   letter-spacing: 0.8em;
-  font-size: 18px;
+  font-size: var(--generalFont);
 }
 
 /* Buttons */
@@ -30,11 +35,11 @@ input[type=text], select {
 .button{
 	background-color: Transparent;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	border-radius: 8px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	border-radius: 12px;
 	color: var(--general);
-	font-size: 18px;
+	font-size: var(--generalFont)*0.8;
 	text-decoration: none;
 	border-color: var(--general);
 	border-style: solid;
@@ -56,7 +61,7 @@ input[type=text], select {
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px;
+  height: 42px;
 }
 
 .switch input { 
@@ -80,7 +85,7 @@ input[type=text], select {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
+  height: 32px;
   width: 26px;
   left: 4px;
   bottom: 4px;
@@ -103,18 +108,28 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+/* Alignment container */
+
+.container{
+  text-align: center;
+}
+
 /* Settings text container */
 
 .settings{
 	color: var(--general);
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-}
+  margin: 20px;
+  text-align: right;
+  display: inline-block;
+  font-size: var(--generalFont);
+  }
 
 /* Display text container */
 
 .disp{
   color: var(--general);
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 32;
+  font-size: var(--generalFont);
   letter-spacing: 0.8em;
 }

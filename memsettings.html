@@ -14,41 +14,49 @@
 
   </head>
 
-  <h1> Settings </h1>
+  <h1> Sequence Settings: </h1>
 
   <body onload = "defaults()" bgcolor = "black">
     
-    <div class = "settings"> 
-      Length:
-      <button class = "button" onclick = "javascript:changeLen('-')"> - </button> 
-      <span id = "showLen"></span>
-      <button class = "button" onclick = "javascript:changeLen('+')"> + </button> 
-    </div>
+    <div class = "container">
 
-    <div class = "settings"> 
-      Timer:
-      <button class = "button" onclick = "javascript:changeTimer('-')"> - </button> 
-      <span id = "showTimer"></span>
-      <button class = "button" onclick = "javascript:changeTimer('+')"> + </button> 
-    </div>
+      <div class = "settings"> 
+      
+        <p>
+          Length: &emsp;
+          <button class = "button" onclick = "javascript:changeLen('-')"> - </button> 
+          <span id = "showLen"></span>
+          <button class = "button" onclick = "javascript:changeLen('+')"> + </button> 
+        </p>
+      
+        <p>
+          Timer: &emsp;
+          <button class = "button" onclick = "javascript:changeTimer('-')"> - </button> 
+          <span id = "showTimer"></span>
+          <button class = "button" onclick = "javascript:changeTimer('+')"> + </button> 
+        </p>
+      
+        <p>
+          Alphanumeric? &emsp;
+          <label class="switch">
+            <input type="checkbox" id = "alphaNumCheck" onchange = "javascript:setAlphaNum(this)">
+            <span class="slider round"></span>
+          </label>
+        </p>
 
-    <div class = "settings">
-      Alphanumeric?
-      <label class="switch">
-        <input type="checkbox" id = "alphaNumCheck" onchange = "javascript:setAlphaNum(this)">
-        <span class="slider round"></span>
-      </label>
-    </div>
+        <p>
+          Reversed? &emsp;
+          <label class="switch">
+            <input type="checkbox" id = "reversedCheck" onchange = "javascript:setReversed(this)">
+            <span class="slider round"></span>
+          </label>
+        </p>
 
-    <div class = "settings">	
-      Reversed?
-      <label class="switch">
-        <input type="checkbox" id = "reversedCheck" onchange = "javascript:setReversed(this)">
-        <span class="slider round"></span>
-      </label>
-    </div>
+        <button class = "button" onclick = "javascript:runTest()" id = "button"> Go! </button> 
 
-    <button class = "button" onclick = "javascript:runTest()" id = "button"> Go </button> 
+      </div>
+
+    </div>  
 
   </body>
 

@@ -15,18 +15,30 @@ function setReversed(check){
   localStorage.setItem("reversed", JSON.stringify(state));
 }
 
+function lenDigits(output){
+  // Ensure that output number has spaces
+  // prepended to it for consistency
+  if(output < 10){
+    outputString = "0" + output.toString();
+  }
+  else{
+    outputString = output.toString();
+  }
+  return outputString;
+}
+
 function defaults(){
   // Default settings on load.
   // Timer:
-  defaultTimer = 10000;
+  defaultTimer = 4000;
   localStorage.setItem("timer", JSON.stringify(defaultTimer));
   showTimer = document.getElementById("showTimer");
-  showTimer.innerHTML = defaultTimer/1000.0;
+  showTimer.innerHTML = lenDigits(defaultTimer/1000.0);
   // Number of characters:
-  defaultLen = 8;
+  defaultLen = 9;
   localStorage.setItem("len", JSON.stringify(defaultLen));
   showLen = document.getElementById("showLen");
-  showLen.innerHTML = defaultLen;
+  showLen.innerHTML = lenDigits(defaultLen);
   // Alphanumeric? 
   alphaNumState = false;
   localStorage.setItem("alphaNum", JSON.stringify(alphaNumState));
@@ -51,7 +63,7 @@ function changeTimer(sign){
   }
   localStorage.setItem("timer", JSON.stringify(t));
   showTimer = document.getElementById("showTimer");
-  showTimer.innerHTML = t/1000.0;
+  showTimer.innerHTML = lenDigits(t/1000.0);
 }
 
 function changeLen(sign){
@@ -66,5 +78,5 @@ function changeLen(sign){
   }
   localStorage.setItem("len", JSON.stringify(len));
   showLen = document.getElementById("showLen");
-  showLen.innerHTML = len;
+  showLen.innerHTML = lenDigits(len);
 }
