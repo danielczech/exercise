@@ -1,0 +1,54 @@
+<!-- MIT licence (see licence.txt). D Czech 2020. -->
+<!-- Randomised arithmetic problems. -->
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link rel = "stylesheet" href = "css/styles.css">
+    <script type="text/javascript" src="js/msettings.js"></script>
+
+  </head>
+
+  <h1> Maths Settings: </h1>
+
+  <body onload = "defaults()" bgcolor = "black">
+    
+    <div class = "container">
+
+      <div class = "settings"> 
+      
+        <p>
+          Length A: &emsp;
+          <button class = "button" onclick = "javascript:changeLenA('-')"> - </button> 
+          <span id = "showLenA"></span>
+          <button class = "button" onclick = "javascript:changeLenA('+')"> + </button> 
+        </p>
+
+        <p>
+          Length B: &emsp;
+          <button class = "button" onclick = "javascript:changeLenB('-')"> - </button> 
+          <span id = "showLenB"></span>
+          <button class = "button" onclick = "javascript:changeLenB('+')"> + </button> 
+        </p>
+
+        <p>
+          N Add/Sub: &emsp;
+          <button class = "button" onclick = "javascript:changeLenN('-')"> - </button> 
+          <span id = "showLenN"></span>
+          <button class = "button" onclick = "javascript:changeLenN('+')"> + </button> 
+        </p>
+
+        <button class = "button" onclick = "javascript:runTest()" id = "button"> Go! </button> 
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
