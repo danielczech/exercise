@@ -8,14 +8,20 @@
 function onLoad(){
 	A = JSON.parse(localStorage.getItem("A"));
 	N = JSON.parse(localStorage.getItem("N"));
-  ops = getOps(N);
+  addOnly = JSON.parse(localStorage.getItem("addOnly"));
+  if(addOnly){
+    operators = '+-'
+  }
+  else{
+    operators = '+-*/'
+  }
+  ops = getOps(N, operators);
   buildProblem(ops, A, N);
 }
 
-function getOps(N){
+function getOps(N, operators){
   // Randomly select operators
   opArr = [];
-  operators = '+-*/'; 
   for(i = 0; i < (N-1); i++){
     selectedOp = operators.charAt(Math.floor(Math.random()*operators.length));
     opArr.push(selectedOp);

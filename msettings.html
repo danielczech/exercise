@@ -13,6 +13,13 @@
     <div class = "container">
       <div class = "settings"> 
         <p>
+          + or - only? &emsp;
+          <label class="switch">
+            <input type="checkbox" id = "opCheck" onchange = "javascript:setOps(this)">
+            <span class="slider round"></span>
+          </label>
+        </p>
+        <p>
           Digits: &emsp;
           <button class = "button" onclick = "javascript:change('-', 'A')"> - </button> 
           <span id = "showA"></span>

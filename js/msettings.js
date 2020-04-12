@@ -1,8 +1,14 @@
 // MIT licence (see licence.txt). D Czech 2020.
 // Settings for arithmetic problems.
 
+function setOps(check){
+  // Select types of operator
+  state = check.checked;
+  localStorage.setItem("addOnly", JSON.stringify(state));
+}
+
 function defaults(){
-  // Default settings on load.
+  // Default settings on load
   // N digits:
   defaultA = 2;
   localStorage.setItem("A", JSON.stringify(defaultA));
