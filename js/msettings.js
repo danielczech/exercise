@@ -1,5 +1,5 @@
 // MIT licence (see licence.txt). D Czech 2020.
-// Settings for arithmetic problems.
+// Settings for arithmetic.
 
 function setOps(check){
   // Select types of operator

@@ -1,5 +1,5 @@
 // MIT licence (see licence.txt). D Czech 2020.
-// Settings for memory test. 
+// Settings for recall. 
 
 function runTest(){
   window.location.href = "memtest.html"

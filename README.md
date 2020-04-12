@@ -1,19 +1,18 @@
 ### Exercise
 
-Basic utilities for improving performance at specific types of task.  
-  
-Mental arithmetic:   
-  
-- Basic division, multiplication, addition and subtraction  
-- Some method of setting the level of difficulty?  
-- Indication of correctness  
+Basic exercise utilities.  
 
-Memorisation:  
+Arithmetic:   
+  
+- Division, multiplication, addition and subtraction  
+- Specify number of terms  
+- Specify number of digits per term  
+- Specify addition/subtraction only    
+
+Recall:  
   
 - Numeric of varying lengths  
-- Alphanumeric of varying lengths  
-- Method of setting difficulty  
+- Alphanumeric of varying lengths    
 - Re-entry: reversed option  
-- indication of correctness  
 
 

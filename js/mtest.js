@@ -1,5 +1,5 @@
 // MIT licence (see licence.txt). D Czech 2020.
-// Display and testing for arithmetic problems
+// Display and testing for arithmetic
 // 1. Choose operator at random
 // 2. If multiply or divide: select A and B and display
 // 3. If add or subtract: select A repeatedly N times
