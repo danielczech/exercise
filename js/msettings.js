@@ -3,17 +3,12 @@
 
 function defaults(){
   // Default settings on load.
-  // N digits A:
+  // N digits:
   defaultA = 2;
   localStorage.setItem("A", JSON.stringify(defaultA));
   showA = document.getElementById("showA");
   showA.innerHTML = lenDigits(defaultA);
-  // N digits B:
-  defaultB = 2;
-  localStorage.setItem("B", JSON.stringify(defaultB));
-  showB = document.getElementById("showB");
-  showB.innerHTML = lenDigits(defaultB);
-  // N items for add/subtract
+  // N items for add/subtract:
   defaultN = 2;
   localStorage.setItem("N", JSON.stringify(defaultN));
   showN = document.getElementById("showN");

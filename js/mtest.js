@@ -6,18 +6,21 @@
 // 4. Input and test output.
 
 function onLoad(){
-	op = getOp();
 	A = JSON.parse(localStorage.getItem("A"));
-    B = JSON.parse(localStorage.getItem("B"));
 	N = JSON.parse(localStorage.getItem("N"));
-    buildProblem(op, A, B, N);
+  ops = getOps(N);
+  buildProblem(ops, A, N);
 }
 
-function getOp(){
-  // Randomly select operator
-  operators = '+-*/';
-  selectedOp = operators.charAt(Math.floor(Math.random()*operators.length));
-  return selectedOp;
+function getOps(N){
+  // Randomly select operators
+  opArr = [];
+  operators = '+-*/'; 
+  for(i = 0; i < (N-1); i++){
+    selectedOp = operators.charAt(Math.floor(Math.random()*operators.length));
+    opArr.push(selectedOp);
+  }
+  return opArr;
 }
 
 function getNum(digits){
@@ -28,57 +31,85 @@ function getNum(digits){
   return num;
 }
 
-function displayProblem(numbers, operator){
+function displayProblem(numbers, operators){
+  // Display the problem onscreen
   disp = "";
   for(i = 0; i < numbers.length; i++){
     disp = disp + numbers[i].toString();
     if(i < numbers.length - 1){
-    	disp = disp + operator;
+    	disp = disp + operators[i];
     }
   }
   testProblem = document.getElementById("testProblem");
   testProblem.innerHTML = disp;
 }
 
-function buildProblem(operator, A, B, N){
-  switch(operator){
-  	case '*':
-      numA = getNum(A);
-      numB = getNum(B);
-      ans = numA*numB;
-      numbers = [numA, numB];
-      localStorage.setItem("Ans", JSON.stringify(ans));
-      displayProblem(numbers, operator);
-      // put input here
-  	case '/':
-      numA = getNum(A);
-      numB = getNum(B);
-      ans = numA/numB;
-      numbers = [numA, numB];
-      localStorage.setItem("Ans", JSON.stringify(ans));
-      displayProblem(numbers, operator);
-      // put input here
-  	case '+':
-      ans = 0;
-  	  numbers = []
-  	  for(i = 0; i < N; i++){
-  	  	num_i = getNum(A);
-        numbers.push(num_i);
-        ans = ans + num_i;  
-  	  }
-      localStorage.setItem("Ans", JSON.stringify(ans));
-      displayProblem(numbers, operator);
-  	case '-':
-      ans = 0;
-  	  numbers = []
-  	  for(i = 0; i < N; i++){
-  	  	num_i = getNum(A);
-        numbers.push(num_i);
-        ans = ans - num_i;  
-  	  }
-      localStorage.setItem("Ans", JSON.stringify(ans));
-      displayProblem(numbers, operator);
+function inputForm(){
+  // Input form
+  inputForm = document.getElementById("ansForm");
+  inputForm.style.display = "block"; 
+  check = document.getElementById("check");
+  check.style.display = "block"; 
+  ansInput= document.getElementById("ansInput");
+  ansInput.focus();
+  ansInput.select();
+}
+
+function checkAns(){
+  // Display correct elements.
+  dispForm = document.getElementById("ansForm");
+  dispForm.style.display = "none"; 
+  check = document.getElementById("check");
+  check.style.display = "none"; 
+  ansDisp = document.getElementById("ansDisp");
+  ansDisp.style.display = "block";
+  // Get inputs
+  ans = JSON.parse(localStorage.getItem("ans")); // correct answer
+  ansInput = document.getElementById("ansInput").value; // get user input
+  correctAns = document.getElementById("correctAns"); // display answer
+  userAns = document.getElementById("userAns"); // display user answer
+  correctAns.innerHTML = ans;
+  if(ans == ansInput){
+    userAns.innerHTML = ansInput.fontcolor("#2AA834"); // green for correct
+  }
+  else{
+    userAns.innerHTML = ansInput.fontcolor("#EB4034"); // red for incorrect
   }
 }
 
+function buildProblem(operators, A, N){
+  // Build the problem based on the randomly selected operator
+  // and selected parameters. 
+  ans = getNum(A); // Initialise ans
+  numbers = [ans];
+  for(i = 0; i < (N - 1); i++){
+    num_i = getNum(A);
+    numbers.push(num_i);
+    switch(operators[i]){
+      case '*':
+        ans = ans * num_i;
+        break;
+      case '/':  
+        ans = ans / num_i;  
+        break;
+      case '+':
+        ans = ans + num_i;
+        break;
+      case '-':  
+        ans = ans - num_i;
+        break;  
+    }  
+  }
+  localStorage.setItem("ans", JSON.stringify(ans));
+  displayProblem(numbers, operators);
+  inputForm();
+}
+
+function again(){
+  window.location.href = "mtest.html"
+}
+
+function settings(){
+  window.location.href = "msettings.html"
+}
 
