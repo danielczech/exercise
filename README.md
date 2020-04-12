@@ -1,6 +1,6 @@
 ### Exercise
 
-Basic exercise utilities.  
+Basic utilities.  
 
 Arithmetic:   
   
