@@ -59,6 +59,7 @@ function inputForm(){
   ansInput= document.getElementById("ansInput");
   ansInput.focus();
   ansInput.select();
+  ansInput.click();
 }
 
 function checkAns(){

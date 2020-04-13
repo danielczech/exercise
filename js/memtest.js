@@ -106,6 +106,7 @@ function dispForm(){
   ansInput= document.getElementById("ansInput");
   ansInput.focus();
   ansInput.select();
+  ansInput.click();
 }
 
 
