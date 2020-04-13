@@ -119,3 +119,7 @@ function settings(){
   window.location.href = "msettings.html"
 }
 
+function home(){
+  window.location.href = "index.html"
+}
+

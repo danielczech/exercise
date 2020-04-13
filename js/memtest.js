@@ -12,9 +12,13 @@ function randomString(len, alphanum){
   num = '0123456789';
   if(alphanum){
     charitems = alpha + num.repeat(5);
+    // Need full keyboard if alphanumeric input
+    document.getElementById('ansInput').type = 'text';
   }
   else{
     charitems = num;
+    // Can rely on numeric keypad if numeric input only
+    document.getElementById('ansInput').type = 'number';
   } 
   items = [];
   for(i = 0; i < len; i++){
@@ -30,6 +34,10 @@ function again(){
 
 function settings(){
   window.location.href = "memsettings.html"
+}
+
+function home(){
+  window.location.href = "index.html"
 }
 
 function displayTimed(){

@@ -2,25 +2,28 @@
 /* General CSS styles */
 
 :root{
+  /*--hover: #00CCFF;*/
   --general: white;
-  --hover: #00CCFF;
+  --off: #A9A9A9;
+  --hover: white;
   --bg: #000000;
-  --generalFont: 1.5em;
+  --generalFont: 1.2em;
+  --dispFont: 1.4em;
 }
 
-h1{
+h2{
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	text-align: center; 
-	color: var(--general);
+	color: var(--off);
 }
 
 body {
   font-size: var(--generalFont);
 }
 
-/* Text Forms */
+/* Input Forms */
 
-input[type=text], select {
+input[type=number], select{
   display: inline-block;
   border: 0px; 
   background-color: var(--bg);
@@ -28,6 +31,27 @@ input[type=text], select {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   letter-spacing: 0.8em;
   font-size: var(--generalFont);
+}
+
+input[type=text], select{
+  display: inline-block;
+  border: 0px; 
+  background-color: var(--bg);
+  color: var(--general);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 0.8em;
+  font-size: var(--generalFont);
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]{
+  -moz-appearance: textfield;
 }
 
 /* Buttons */
@@ -38,21 +62,25 @@ input[type=text], select {
 	-moz-border-radius: 12px;
 	-webkit-border-radius: 12px;
 	border-radius: 12px;
-	color: var(--general);
-	font-size: var(--generalFont)*0.8;
+	color: var(--off);
+	font-size: var(--generalFont);
 	text-decoration: none;
-	border-color: var(--general);
+	border-color: var(--off);
 	border-style: solid;
 	border-width: small;
 }
 
 .button:hover{
-  color: var(--hover);
+  /*color: var(--hover);*/
 	border-color: var(--hover);
+  border-style: solid;
+  border-width: small;
+  color: var(--hover);
 }
 
 .button:active{
 	background-color: var(--hover);
+  color: var(--hover);
 }
 
 /* Toggle switches */
@@ -61,7 +89,7 @@ input[type=text], select {
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 42px;
+  height: 32px;
 }
 
 .switch input { 
@@ -77,7 +105,7 @@ input[type=text], select {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--general);
+  background-color: var(--off);
   -webkit-transition: .05s;
   transition: .05s;
 }
@@ -85,7 +113,7 @@ input[type=text], select {
 .slider:before {
   position: absolute;
   content: "";
-  height: 32px;
+  height: 24px;
   width: 26px;
   left: 4px;
   bottom: 4px;
@@ -117,7 +145,7 @@ input:checked + .slider:before {
 /* Settings text container */
 
 .settings{
-	color: var(--general);
+	color: var(--off);
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   margin: 20px;
   text-align: right;
@@ -130,6 +158,6 @@ input:checked + .slider:before {
 .disp{
   color: var(--general);
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: var(--generalFont);
-  letter-spacing: 0.8em;
+  font-size: var(--dispFont);
+/*  letter-spacing: 0.8em;*/
 }
