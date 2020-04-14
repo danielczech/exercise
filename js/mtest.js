@@ -6,11 +6,12 @@
 // 4. Input and test output.
 
 function onLoad(){
+  // Run this function on page load.
 	A = JSON.parse(localStorage.getItem("A"));
 	N = JSON.parse(localStorage.getItem("N"));
   addOnly = JSON.parse(localStorage.getItem("addOnly"));
   if(addOnly){
-    operators = '+-'
+    operators = '+-' // If only + and - operators requested. 
   }
   else{
     operators = '+-*/'
@@ -84,6 +85,18 @@ function checkAns(){
   }
 }
 
+function formatAns(ans, N){
+  // Format answer to N decimal places
+  // (only if more than N decimal places present)
+  ansString = ans.toString().split(".");
+  if(ansString.length > 1){
+    if(ansString[1].length > N){
+      ans = ans.toFixed(N)
+    }
+  }
+  return ans;
+}
+
 function buildProblem(operators, A, N){
   // Build the problem based on the randomly selected operator
   // and selected parameters. 
@@ -107,6 +120,7 @@ function buildProblem(operators, A, N){
         break;  
     }  
   }
+  ans = formatAns(ans, 2);
   localStorage.setItem("ans", JSON.stringify(ans));
   displayProblem(numbers, operators);
   inputForm();
