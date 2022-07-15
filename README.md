@@ -1,18 +1,16 @@
 ### Exercise
 
-Basic utilities.  
+A minimalist [webapp](https://danielczech.github.io/exercise/) for improving mental agility at specific tasks:
 
-Arithmetic:   
-  
-- Division, multiplication, addition and subtraction  
-- Specify number of terms  
-- Specify number of digits per term  
-- Specify addition/subtraction only    
+Arithmetic: Practise division, multiplication, addition and subtraction with the ability to specify:  
+- Number of terms  
+- Number of digits per term  
+- Operators   
 
-Recall:  
-  
-- Numeric of varying lengths  
-- Alphanumeric of varying lengths    
-- Re-entry: reversed option  
+Recall: Practise recall of numeric and alphanumeric strings with the ability to specify:
+- String length  
+- String content (alphanumeric or numeric)    
+- Reversed input  
+- Duration string is visible  
 
 
